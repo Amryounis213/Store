@@ -32,7 +32,7 @@ class CategoriesController extends Controller
     public function index()
     {
 
-        Gate::authorize('categories.view-any');
+        // Gate::authorize('categories.view-any');
         $categories = Category::orderBy('created_at', 'ASC')
             ->orderBy('name', 'DESC')
             ->latest()
@@ -49,7 +49,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        Gate::authorize('categories.create');
+        // Gate::authorize('categories.create');
 
         $categories = Category::where('status', '=', 'Active')->get();
         $category = new Category();
@@ -64,7 +64,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        Gate::authorize('categories.create');
+        // Gate::authorize('categories.create');
 
         $request->validate(Category::validateRule());
 
@@ -139,7 +139,7 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        Gate::authorize('categories.update');
+        // Gate::authorize('categories.update');
 
         $category = Category::findorfail($id);
         $categories = Category::where('status', '=', 'Active')->get();
@@ -156,7 +156,7 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Gate::authorize('categories.update');
+        // Gate::authorize('categories.update');
 
         $request->validate(Category::validateRule($id));
         $category = Category::find($id);
