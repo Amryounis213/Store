@@ -14,8 +14,8 @@ use Laravel\Sanctum\PersonalAccessToken;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-    //   use HasApiTokens;
-    //  use TwoFactorAuthenticatable;
+    use HasApiTokens;
+    use TwoFactorAuthenticatable;
     /**
      * The attributes that are mass assignable.
      *
@@ -68,7 +68,7 @@ class User extends Authenticatable
         return $this->mobile;
     }
 
-    /*  public function createToken(string $name, array $abilities = ['*'], $ip = null)
+    public function createToken(string $name, array $abilities = ['*'], $ip = null)
     {
         $token = new PersonalAccessToken();
         $token->forceFill([
@@ -82,5 +82,5 @@ class User extends Authenticatable
 
 
         return new \Laravel\Sanctum\NewAccessToken($token, $token->getKey() . '|' . $plainTextToken);
-    }*/
+    }
 }

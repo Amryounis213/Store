@@ -32,7 +32,7 @@ class CategoriesController extends Controller
     public function index()
     {
 
-        //  Gate::authorize('categories.view-any');
+        Gate::authorize('categories.view-any');
         $categories = Category::orderBy('created_at', 'ASC')
             ->orderBy('name', 'DESC')
             ->latest()
@@ -49,7 +49,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //Gate::authorize('categories.create');
+        Gate::authorize('categories.create');
 
         $categories = Category::where('status', '=', 'Active')->get();
         $category = new Category();
@@ -64,7 +64,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        // Gate::authorize('categories.create');
+        Gate::authorize('categories.create');
 
         $request->validate(Category::validateRule());
 
@@ -80,7 +80,7 @@ class CategoriesController extends Controller
         $categories = Category::create($input);
         //  Write into session 
         //$success = $request->session()->flash('success', $request->name . 'add successfully');
-        //Alert::success('Success Title', 'Success Message');
+        Alert::success('Success Title', 'Success Message');
 
         return redirect()->route('categories.index', ['categories' => $categories]);
 
@@ -139,7 +139,7 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        // Gate::authorize('categories.update');
+        Gate::authorize('categories.update');
 
         $category = Category::findorfail($id);
         $categories = Category::where('status', '=', 'Active')->get();
@@ -156,7 +156,7 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // Gate::authorize('categories.update');
+        Gate::authorize('categories.update');
 
         $request->validate(Category::validateRule($id));
         $category = Category::find($id);
@@ -204,7 +204,7 @@ class CategoriesController extends Controller
 
         $delete_all_id = explode(",", $request->delete_all_id);
         Category::whereIn('id', $delete_all_id)->Delete();
-        //Alert::success('Success Title', 'Success Message');
+        Alert::success('Success Title', 'Success Message');
         return redirect()->back();
     }
 
@@ -213,10 +213,10 @@ class CategoriesController extends Controller
         return view('admin.categories.import');
     }
 
-    // public function importStore(Request $request)
-    // {
-    //     Excel::import(new EmployeeImport, $request->file);
+    public function importStore(Request $request)
+    {
+        Excel::import(new EmployeeImport, $request->file);
 
-    //     return "true";
-    // }
+        return "true";
+    }
 }
