@@ -18,8 +18,6 @@ class RoleUserSeeder extends Seeder
         DB::table('users')->insert([
             'user_id' => 1,
             'role_id' => 1,
-
-            //'remember_token' => Str::random(10),
         ]);
     }
 }

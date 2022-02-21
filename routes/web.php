@@ -47,6 +47,7 @@ Route::get(
 );
 
 
+Route::resource('roles', RoleController::class);
 
 
 /** Admin Prefix Routes */
@@ -58,7 +59,6 @@ Route::prefix('admin')->middleware(['auth', CheckUserType::class])->group(functi
   Route::resource('products', ProductController::class);
   Route::resource('orders', OrderController::class);
 
-  Route::resource('roles', RoleController::class);
   Route::get('/usersPer', [UserPermessionsController::class, 'index'])->name('user.index');
   Route::get('/usersPer/{id}', [UserPermessionsController::class, 'create'])->name('user.create');
   Route::post('/usersPer/{id}', [UserPermessionsController::class, 'store'])->name('user.store');
