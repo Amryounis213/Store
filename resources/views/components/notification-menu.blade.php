@@ -7,16 +7,16 @@
     <!--Notification Menu-->
     <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Show notifications"><i class="fa fa-bell-o fa-lg"></i>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{$unread}}
+            {{--$unread--}}
         </span>
     
     </a>
       <ul class="app-notification dropdown-menu dropdown-menu-right">
-        <li class="app-notification__title">You have {{$unread}} new notifications.</li>
+        <li class="app-notification__title">You have {{--$unread--}} new notifications.</li>
         <div class="app-notification__content">
             @foreach ($notifications as $notification)
 
-            <li><a class="app-notification__item @if ($notification->unread())
+            {{-- <li><a class="app-notification__item @if ($notification->unread())
               text-danger
             @endif" href="javascript:;"><span class="app-notification__icon"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></span>
                 <div>
@@ -24,7 +24,7 @@
                   <p class="app-notification__meta">{{$notification->created_at->diffForHumans()}}</p>
                 </div>
                 </a>
-            </li>
+            </li> --}}
             @endforeach
          
           
