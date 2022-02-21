@@ -19,6 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::apiResource('categories', CategoriesController::class)->middleware('auth:sanctum');
+Route::apiResource('categories', CategoriesController::class);
 Route::post('auth/tokens', [AccessTokensController::class, 'store']);
 Route::delete('auth/tokens', [AccessTokensController::class, 'destroy'])->middleware('auth:sanctum');
