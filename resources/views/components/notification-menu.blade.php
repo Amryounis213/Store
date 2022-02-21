@@ -14,7 +14,7 @@
       <ul class="app-notification dropdown-menu dropdown-menu-right">
         <li class="app-notification__title">You have {{--$unread--}} new notifications.</li>
         <div class="app-notification__content">
-            @foreach ($notifications as $notification)
+            {{-- @foreach ($notifications as $notification)
 
             {{-- <li><a class="app-notification__item @if ($notification->unread())
               text-danger
@@ -24,8 +24,8 @@
                   <p class="app-notification__meta">{{$notification->created_at->diffForHumans()}}</p>
                 </div>
                 </a>
-            </li> --}}
-            @endforeach
+            </li>
+            @endforeach --}}
          
           
             
