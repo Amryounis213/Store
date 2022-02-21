@@ -1,1 +1,1 @@
-web: vendor/bin/heroka-php-apache2 public/
+web:vendor/bin/heroka-php-apache2 public/
