@@ -24,7 +24,7 @@ class ProductController extends Controller
     public function index()
     {
         //where('status', '=', 'active')->orderBy('name', 'ASC')->orderBy('price', 'DESC')->get();
-        Gate::authorize('products.view-any');
+        // Gate::authorize('products.view-any');
         $products = Product::active()->paginate();
         $count = Product::count();
 
@@ -39,7 +39,7 @@ class ProductController extends Controller
     public function create()
     {
 
-        Gate::authorize('products.create');
+        // Gate::authorize('products.create');
         $product = new Product();
         $categories = Category::all();
         return view('admin.products.create', ['product' => $product, 'categories' => $categories]);
