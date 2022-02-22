@@ -15,7 +15,7 @@
     <div class="form-group">
       <label for="exampleFormControlSelect1">Parent</label>
       <select name="parent_id" class="form-control" id="parent_id">
-        <option value="0">--Select Parent--</option>
+        <option value="">--Select Parent--</option>
         @foreach ($categories as $parent)
         <option value="{{$parent->id}}" @if ($parent->id == $category->parent_id) selected @endif>{{$parent ->name}}</option>
         @endforeach
