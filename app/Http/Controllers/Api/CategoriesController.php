@@ -22,7 +22,15 @@ class CategoriesController extends Controller
         $category = Category::when($request->query('parent_id'), function ($query, $value) {
             $query->where('parent_id', '=', $value);
         })->paginate();
-        return CategoryResource::collection($category);
+
+        return response()->json([
+
+            'status' => true,
+            'code' => 200,
+            'message' => 'All Categories return',
+            'categories' => CategoryResource::collection($category),
+
+        ]);
     }
 
     /**

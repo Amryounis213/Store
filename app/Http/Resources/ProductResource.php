@@ -2,11 +2,9 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Product;
-use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CategoryResource extends JsonResource
+class ProductResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,12 +15,8 @@ class CategoryResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
             'name' => $this->name,
-            'time' => Carbon::now('m'),
-            'parent_id' => $this->parent_id,
-            'products' => Product::where('category_id', $this->id)->get(),
-
+            'quantity' => $this->quantity,
         ];
     }
 }
