@@ -27,12 +27,11 @@ class Category extends Model
     public static function validateRule($id = null)
     {
         return [
-            'name' => 'required||max:255|unique:categories,id,' . $id,
+           // 'name' => 'required||max:255|unique:categories,id,' . $id,
             'description' => 'nullable',
             'image' => 'nullable',
             'parent_id' => 'nullable',
             'status' => 'required|in:Active,Draft',
-
         ];
     }
     public function children()

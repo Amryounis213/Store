@@ -14,7 +14,7 @@ class UserPermessionsController extends Controller
 {
     public function index()
     {
-        Gate::authorize('roles.view-any');
+        // Gate::authorize('roles.view-any');
         $users = User::get();
         return view('admin.users.index', ['users' => $users]);
     }
