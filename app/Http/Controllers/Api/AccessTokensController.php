@@ -41,8 +41,8 @@ class AccessTokensController extends Controller
             'status' => true,
             'code' => 200,
             'message' => 'login successfully',
-            'token' => $token->plainTextToken,
-            'user' => $user,
+            //  'token' => $token->plainTextToken,
+            'user' => $user->setAttribute('token', $token->plainTextToken),
 
         ], 200);
     }
