@@ -21,8 +21,8 @@ class CategoryResource extends JsonResource
             'name' => $this->name,
             'time' => Carbon::now('m'),
             'parent_id' => $this->parent_id,
+            'image' => asset($this->image),
             'products' => Product::where('category_id', $this->id)->get(),
-
         ];
     }
 }

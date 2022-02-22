@@ -40,6 +40,7 @@ class AccessTokensController extends Controller
         return Response()->Json([
             'status' => true,
             'code' => 200,
+            'message' => 'login successfully',
             'token' => $token->plainTextToken,
             'user' => $user,
 
