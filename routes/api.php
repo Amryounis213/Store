@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::apiResource('categories', CategoriesController::class);
+Route::apiResource('products', ProductController::class);
 
-Route::get('category/{id?}/products', [ProductController::class, 'index']);
 Route::post('login', [AccessTokensController::class, 'store']);
 Route::delete('login', [AccessTokensController::class, 'destroy'])->middleware('auth:sanctum');
