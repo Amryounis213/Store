@@ -87,7 +87,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        Gate::authorize('products.update');
+       // Gate::authorize('products.update');
         $product = Product::find($id);
         $categories = Category::all();
         return view('admin.products.edit', ['product' => $product, 'categories' => $categories]);
@@ -102,7 +102,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Gate::authorize('products.update');
+       // Gate::authorize('products.update');
         $products = Product::find($id);
         $input = $request->all();
         if ($request->hasFile('image')) {
@@ -122,7 +122,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        Gate::authorize('products.delete');
+       // Gate::authorize('products.delete');
         $product = Product::findorfail($id);
         $product->delete();
         $success = session()->flash('success', $product->name . ' Deleted successfully');
