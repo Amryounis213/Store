@@ -51,7 +51,7 @@ class ProductController extends Controller
             'status' => true,
             'code' => 200,
             'message' => 'single product',
-            'product' => ProductResource::collection($products),
+            'product' => $products,
 
         ]);
     }
