@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ProductResource;
-use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('status' , 'Active')->get();
-
-        return response()->json([
-            'status' => true,
-            'code' => 200,
-            'message' => 'All Products return',
-            'products' => ProductResource::collection($products),
-        ]);
+        //
     }
 
     /**
@@ -45,15 +36,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $products = Product::where('status' , 'Active')->where('id' , $id)->first();
-
-        return response()->json([
-            'status' => true,
-            'code' => 200,
-            'message' => 'single product',
-            'product' => ProductResource::collection($products),
-
-        ]);
+        //
     }
 
     /**

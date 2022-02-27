@@ -12,8 +12,9 @@ class Cart extends Model
     public $incrementing = false;
     protected $keyType = 'string';
     protected $fillable = ['id', 'cookie_id', 'product_id', 'user_id', 'quantity'];
-    protected $with = ['product'];
+    //protected $with = ['product'];
 
+    
     public function product()
     {
         return $this->belongsTo(Product::class);

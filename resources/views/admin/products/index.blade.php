@@ -25,7 +25,6 @@
             <h5 class="h5"><i class="fa fa-table"></i><strong> Products Table</strong></h5>
           </div>
           <div class="row col-md-6 justify-content-end">
-              <a style="height: 30px; width:100px;" href="#" class="btn btn-warning d-flex justify-content-center align-items-center ml-1"><i class="fa fa-print "></i><small>PDF</small></a>
               <a style="height: 30px; width:100px;" href="{{route('products.create')}}" class="btn btn-primary d-flex justify-content-center align-items-center ml-1"><i class="fa fa-plus "></i><small>New</small></a>
           </div>
           
@@ -35,7 +34,7 @@
         
         <div class="table-responsive">
           
-          <table class="table table-hover table-bordered" id="sampleTable">
+          <table class="table table-hover " id="sampleTable">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -47,10 +46,7 @@
                     <th>price</th>
                     <th>sale price</th>
                     <th>quantity</th>
-                    <th>weight</th>
-                    <th>height</th>
-                    <th>wedth</th>
-                    <th>length</th>
+                  
                     <th>status</th>
                     <th>options</th>
                 <tr>
@@ -70,10 +66,7 @@
                     <td>{{$product->price}} $</td>
                     <td>{{$product->sale_price}}</td>
                     <td>{{$product->quantity}}</td>
-                    <td>{{$product->weight}}</td>
-                    <td>{{$product->height}}</td>
-                    <td>{{$product->wedth}}</td>
-                    <td>{{$product->length}}</td>
+                  
                     <td>{{$product->status}}</td> 
                     <td>
                       <div class="row  align-items-center">

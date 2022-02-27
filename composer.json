@@ -16,7 +16,7 @@
         "laravel/fortify": "^1.8",
         "laravel/framework": "^8.40",
         "laravel/nexmo-notification-channel": "^2.5",
-        "laravel/sanctum": "^2.11",
+        "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.5",
         "maatwebsite/excel": "^3.1",
         "nexmo/laravel": "^2.4",
