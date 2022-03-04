@@ -51,7 +51,7 @@ Route::resource('roles', RoleController::class);
 
 
 /** Admin Prefix Routes */
-Route::prefix('admin')->middleware(['auth', CheckUserType::class])->group(function () {
+Route::prefix('admin')->middleware(['auth'])->group(function () {
   Route::view('/', 'admin.index');
   Route::resource('categories', CategoriesController::class);
   Route::post('delete_all-categories', [CategoriesController::class, 'DeleteAllSelectedCategory'])->name('delete_all');
