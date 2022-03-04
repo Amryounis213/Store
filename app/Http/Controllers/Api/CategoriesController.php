@@ -25,7 +25,7 @@ class CategoriesController extends Controller
 
         return response()->json([
 
-            'status' => true,
+            'status' => true, 
             'code' => 200,
             'message' => 'All Categories return',
             'categories' => CategoryResource::collection($category),
