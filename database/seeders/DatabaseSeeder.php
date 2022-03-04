@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
         $price = rand(800, 1000);
         $price_sale = $price - 45;
         $this->call([
-            //UsersTableSeeder::class,
-            //RoleSeeder::class,
+            UsersTableSeeder::class,
+            RoleSeeder::class,
             RoleUserSeeder::class,
         ]);
     }

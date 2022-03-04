@@ -63,7 +63,13 @@ class CategoriesController extends Controller
     {
 
         $category = Category::with('children')->findOrFail($id);
-        return new CategoryResource($category);
+        return response()->json([
+        'status' => true, 
+        'code' => 200,
+        'message' => 'All Categories return',
+        'category' => new CategoryResource($category),
+    ]);
+         
     }
 
     /**
