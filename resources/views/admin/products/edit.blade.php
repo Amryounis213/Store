@@ -30,7 +30,7 @@
       <form method="POST" action="{{route('products.update',$product->id)}}" enctype="multipart/form-data">
           @csrf
           @method('put')
-        @include('admin.Products._form' , ['button'=> 'Update'])
+        @include('admin.products._form' , ['button'=> 'Update'])
       </form>
     </div>
   </div>
